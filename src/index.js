@@ -5,6 +5,9 @@ const apiRoutes = require("./routes");
 
 const app = express();
 
+app.use(express.json()); // Read about this (Whatever given read in like JSON)
+app.use(express.urlencoded({ extended: true })); // check by hovering
+
 app.use("/api", apiRoutes); // When we get req with /api, we will redirect to api routes
 
 app.listen(ServerConfig.PORT, () => {
