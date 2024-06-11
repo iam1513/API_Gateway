@@ -8,7 +8,7 @@ const app = express();
 
 const limiter = rateLimit({
   window: 2 * 60 * 1000, // In 2 min
-  max: 2, // max 2 devices from 1 IP in 2 mins
+  max: 100, // max 2 devices from 1 IP in 2 mins
 });
 
 app.use(express.json()); // Read about this (Whatever given read in like JSON)
