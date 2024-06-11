@@ -18,10 +18,22 @@ function createToken(input) {
     });
   } catch (error) {
     console.log(error);
+    throw error;
+  }
+}
+
+function verifyToken(token) {
+  try {
+    // console.log(jwt.verify(token, ServerConfig.JWT_SECRET));
+    return jwt.verify(token, ServerConfig.JWT_SECRET);
+  } catch (error) {
+    console.log(error);
+    throw error;
   }
 }
 
 module.exports = {
   checkPassword,
   createToken,
+  verifyToken,
 };
